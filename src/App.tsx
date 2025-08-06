@@ -379,7 +379,7 @@ export const App = () => {
                 Подключите подписку
               </Typography.Text>
               <Typography.Text view="primary-small" color="primary">
-                1 оплаченный месяц = 1 билетику для участия в розыгрыше
+                Каждый оплаченный месяц — ещё один билетик для розыгрыша
               </Typography.Text>
             </div>
           </div>
