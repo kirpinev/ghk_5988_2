@@ -20,7 +20,7 @@ import { appSt } from "./style.css";
 import { Gap } from "@alfalab/core-components/gap";
 import { useState } from "react";
 import { BottomSheet } from "@alfalab/core-components/bottom-sheet";
-import {ThxLayout} from "./thx/ThxLayout.tsx";
+import { ThxLayout } from "./thx/ThxLayout.tsx";
 
 interface Product {
   title: string;
@@ -166,7 +166,13 @@ export const App = () => {
               </Typography.Text>
               <Gap size={16} />
               <div
-                onClick={() => setIsMoreClicked(true)}
+                onClick={() => {
+                  setIsMoreClicked(true);
+
+                  window.gtag("event", "5988_get_info", {
+                    variant_name: "5988_2",
+                  });
+                }}
                 style={{
                   padding: "4px 16px",
                   backgroundColor: "#554EBE",
@@ -275,7 +281,11 @@ export const App = () => {
       <BottomSheet open={isMoreClicked} onClose={() => setIsMoreClicked(false)}>
         <div
           className={appSt.box}
-          style={{ backgroundImage: "linear-gradient(to bottom, #FFFFFF, #D0DAFF)", paddingBottom: 0, border: "none" }}
+          style={{
+            backgroundImage: "linear-gradient(to bottom, #FFFFFF, #D0DAFF)",
+            paddingBottom: 0,
+            border: "none",
+          }}
         >
           <Gap size={8} />
           <div
